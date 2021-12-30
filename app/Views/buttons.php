@@ -9,11 +9,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/mdb.min.css'); ?>" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style.min.css'); ?>" rel="stylesheet">
     <style type="text/css">
 
       html,
@@ -219,7 +219,7 @@
                   available. Create your own, stunning website.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
+              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Start free tutorial
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
             </div>
@@ -287,10 +287,10 @@
             </p>
 
             <!-- CTA -->
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
+            <a target="_blank" href="#" class="btn btn-indigo btn-md">Download
               <i class="fas fa-download ml-1"></i>
             </a>
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live demo
+            <a target="_blank" href="#" class="btn btn-indigo btn-md">Live demo
               <i class="far fa-image ml-1"></i>
             </a>
 
@@ -684,10 +684,10 @@
 
     <!--Call to action-->
     <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download MDB
+      <a class="btn btn-outline-white" href="#" target="_blank" role="button">Download MDB
         <i class="fas fa-download ml-2"></i>
       </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start free tutorial
+      <a class="btn btn-outline-white" href="#" target="_blank" role="button">Start free tutorial
         <i class="fas fa-graduation-cap ml-2"></i>
       </a>
     </div>
@@ -733,8 +733,8 @@
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+      © 2020 Copyright:
+      <a href="#" target="_blank"> MDBootstrap.com </a>
     </div>
     <!--/.Copyright-->
 
@@ -743,13 +743,13 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/popper.min.js'); ?>"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/mdb.min.js'); ?>"></script>
       <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
