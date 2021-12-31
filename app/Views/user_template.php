@@ -9,11 +9,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url();?>/app/public/admin/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="<?= base_url('assets/css/mdb.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url();?>/app/public/admin/assets/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="<?= base_url('assets/css/style.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url();?>/app/public/admin/assets/css/style.min.css" rel="stylesheet">
     <style type="text/css">
 
       html,
@@ -271,7 +271,7 @@
           <div class="col-md-6 mb-4">
 
             <!-- Main heading -->
-            <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
+            <h3 class="h3 mb-3">Material Design for Bootstrap<?php echo base_url() ; ?></h3>
             <p>This template is created with Material Design for Bootstrap (
               <strong>MDB</strong> ) framework.</p>
             <p>Read details below to learn more about MDB.</p>
@@ -743,13 +743,13 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
+    <script type="text/javascript" src="../../assets/js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="<?php echo base_url('assets/js/popper.min.js'); ?>"></script>
+    <script type="text/javascript" src="../../assets/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+    <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="<?php echo base_url('assets/js/mdb.min.js'); ?>"></script>
+    <script type="text/javascript" src="../../assets/js/mdb.min.js"></script>
       <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization

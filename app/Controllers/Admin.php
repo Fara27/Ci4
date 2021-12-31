@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Admin extends BaseController
 {
 	public function index()
 	{
-		return view('user_template');
+		return view('admin/dashboard');
 	}
 }
