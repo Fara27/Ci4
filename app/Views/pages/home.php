@@ -22,16 +22,15 @@
         <!-- Content -->
         <div class="text-center white-text mx-5 wow fadeIn">
           <h1 class="mb-4">
-            <strong>Learn Bootstrap 4 with MDB</strong>
+            <strong> <h2><?=$title?></h2> TomiFaraday Global Resources</strong>
           </h1>
 
           <p>
-            <strong>Best & free guide of responsive web design</strong>
+            <strong>Business Development and Marketing Reseach</strong>
           </p>
 
           <p class="mb-4 d-none d-md-block">
-            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-              available. Create your own, stunning website.</strong>
+            <strong>We have the most outstanding business development softwares for business financial planning and performance monitoring using best practice in Business Marketing</strong>
           </p>
 
           <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
@@ -57,7 +56,7 @@
         <!-- Content -->
         <div class="text-center white-text mx-5 wow fadeIn">
           <h1 class="mb-4">
-            <strong>Learn Bootstrap 4 with MDB</strong>
+            <strong>Recharge Airtime and Pay Bills</strong>
           </h1>
 
           <p>
@@ -92,11 +91,11 @@
         <!-- Content -->
         <div class="text-center white-text mx-5 wow fadeIn">
           <h1 class="mb-4">
-            <strong>Learn Bootstrap 4 with MDB</strong>
+            <strong>Learn Digital Marketing</strong>
           </h1>
 
           <p>
-            <strong>Best & free guide of responsive web design</strong>
+            <strong>We teach you best practice in Online presence</strong>
           </p>
 
           <p class="mb-4 d-none d-md-block">
@@ -155,9 +154,9 @@
           <div class="col-md-6 mb-4">
 
             <!-- Main heading -->
-            <h3 class="h3 mb-3">Material Design for Bootstrap<?php echo base_url() ; ?></h3>
-            <p>This template is created with Material Design for Bootstrap (
-              <strong>MDB</strong> ) framework.</p>
+            <h3 class="h3 mb-3">Maketing and Marketing Agency</h3>
+            <p>Market Research and Product Development solutions is our core goal using our own (
+              <strong>TGR</strong> ) Market Research framework.</p>
             <p>Read details below to learn more about MDB.</p>
             <!-- Main heading -->
 
@@ -192,7 +191,7 @@
       <!--Section: Main features & Quick Start-->
       <section>
 
-        <h3 class="h3 text-center mb-5">About MDB</h3>
+        <h3 class="h3 text-center mb-5">About TGR</h3>
 
         <!--Grid row-->
         <div class="row wow fadeIn">
@@ -206,8 +205,8 @@
                 <i class="fas fa-code fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title">Bootstrap 4</h5>
-                <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+                <h5 class="feature-title">Own Technology Solution</h5>
+                <p class="grey-text">Our Business Analysis Tools (BAT) are built by our team of marketing and IT profressionals.</p>
               </div>
             </div>
             <!--/First row-->
@@ -220,7 +219,7 @@
                 <i class="fas fa-book fa-2x blue-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title">Detailed documentation</h5>
+                <h5 class="feature-title">Trade Crypto Currency</h5>
                 <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you to implement your ideas
                   easily.
                 </p>
@@ -236,7 +235,7 @@
                 <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title">Lots of tutorials</h5>
+                <h5 class="feature-title">Airtime and Data Recharge</h5>
                 <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials, which allow you to learn
                   how to use MDB as well as other technologies.</p>
               </div>
@@ -294,8 +293,8 @@
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
-                <h6 class="feature-title">400+ UI elements</h6>
-                <p class="grey-text">An impressive collection of flexible components allows you to develop any project.
+                <h6 class="feature-title">E-Commerce Solution</h6>
+                <p class="grey-text">Out of the box integration of shop products into our E-commerce platform makes it seamless.
                 </p>
                 <div style="height:15px"></div>
               </div>
@@ -308,8 +307,8 @@
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
-                <h6 class="feature-title">600+ icons</h6>
-                <p class="grey-text">Hundreds of useful, scalable, vector icons at your disposal.</p>
+                <h6 class="feature-title">Pay Bills</h6>
+                <p class="grey-text">You can pay your utility bills in breeze using our cutting edge payment gateway.</p>
                 <div style="height:15px"></div>
               </div>
             </div>

@@ -8,7 +8,9 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Home Page',
+			'page' => 'home'
 		];
-		return view('user_template', $data);
+		echo view('user_template', $data);
+		
 	}
 }

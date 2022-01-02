@@ -1,18 +1,20 @@
-<?php
-
-namespace App\Controllers;
+<?php namespace App\Controllers;
 
 use App\Models\UserModel;
-use CodeIgniter\Controller;
 
 class User extends BaseController
 {
-	public function index()
+	public function create()
 	{
         $data = [
-            'title' => 'News archive',
-            ];
-		return view('user/dashboard', $data);
+			'title' => 'Users Home Page',
+			'page' => 'home'
+		];
+		//echo view('user_template', $data);
+		echo view('layouts/header', $data);
+		echo view('user/home');
+		echo view('layouts/footer');
+		
 	}
 
     public function view($email = null)
