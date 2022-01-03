@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->get('user/create', 'User::create');
+$routes->get('user/view', 'User::view');
 $routes->get('/', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
 

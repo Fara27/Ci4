@@ -21,5 +21,9 @@ class User extends BaseController
     {
         $model = new UserModel();
         $data['email'] = $model->getUser($email);
+        	//echo view('user_template', $data);
+		echo view('layouts/header', $data);
+		echo view('user/view');
+		echo view('layouts/footer');
     }
 }

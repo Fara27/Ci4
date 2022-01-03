@@ -38,6 +38,25 @@
 
             <!--Card-->
             <div class="card">
+            <?php if(isset($validation)):?>
+        <div class="alert alert-danger" role="alert">
+            <strong>Validation error</strong>
+            <?= $validation->listErrors(); ?>
+        </div>
+        <?php endif; ?>
+
+        <?php if(isset($_SESSION['message_noti'])):?>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION['message_noti'] ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if(isset($_SESSION['message_error'])):?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION['message_error'] ?>
+            </div>
+        <?php endif; ?>
+        
 
               <!--Card content-->
               <div class="card-body">
