@@ -12,13 +12,15 @@ class UserModel extends Model
     protected $createdField  = 'user_reg_date';
     protected $updatedField  = 'updated_at';
 
-    public function getUser($email = false)
+    public function getUser($email = NULL)
     {
         if($email === false)
         {
             return $this->findAll();
         }
-        return $this->asArray()->where(['email' => $email])->first();
+       return $this->asArray()->where(['email' => $email])->first();
+       
+        
     }
 }
 ?>

@@ -20,7 +20,12 @@ class User extends BaseController
     public function view($email = null)
     {
         $model = new UserModel();
-        $data['email'] = $model->getUser($email);
+		$data = [
+			'title' => 'Users Home Page',
+			'page' => 'home',
+			//'email' => $model->getUser($email),
+		];
+        
         	//echo view('user_template', $data);
 		echo view('layouts/header', $data);
 		echo view('user/view');
