@@ -1,22 +1,9 @@
 <main>
   <div class="container">
-    
+    <br><br><br>
+    <h4 class="h4 mb-3"><?=$title?></h4>
     <!--Section: Main info-->
     <section class="mt-5 wow fadeIn">
-    <br>
-    <h4 class="h4 mb-3"><?=$title?></h4>
-    <?php 
-      echo "<pre>";
-     // print_r($user);
-      echo "</pre>";
-    ?>
-    <?php if($user): ?>
-      <?php foreach($user as $u): ?>
-        <h4 class="h3 mb-3"><?=$u->user_name?></h4>
-      <?php endforeach; ?>
-    <?php else: ?>
-      <p>No User has registered</p>
-    <?php endif; ?>
 
       <!--Grid row-->
       <div class="row">
@@ -56,14 +43,13 @@
 
               <!--Card content-->
               <div class="card-body">
-
               <?= \Config\Services::validation()->listErrors(); ?>
                 <!-- Form -->
                 <form name="registration" action="<?=base_url()?>/user/store" method="post" >
                   <!-- Heading -->
-                  <h3 class="dark-grey-text text-center">
+                  <h4 class="dark-grey-text text-center">
                     <strong>Sign Up:</strong>
-                  </h3>
+                  </h4>
                   <hr>
 
                   <div class="md-form">
@@ -134,6 +120,7 @@
                     <p>Already have an account? <a href="/user/login">Login Here</a></p>
 
                   </div>
+
                 </form>
                 <!-- Form -->
 

@@ -1,0 +1,13 @@
+<?xml version="1.0"?><!-- User Information Using XML-->
+<users>
+    <user id="" type="">
+        <uname></uname>
+        <fname></fname>
+        <lname></lname>
+        <oname></oname>
+        <email></email>
+        <phone></phone>
+        <pass></pass>
+        <pass0></pass0>
+    </user>    
+</users>

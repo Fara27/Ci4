@@ -48,6 +48,24 @@
               }
           }
     </style>
+       <style>
+      #intro {
+        background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+        height: 100vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
 </head>
 
 <body>
@@ -81,11 +99,9 @@
             <a class="nav-link" href="<?php echo base_url();?>/about" target="_blank">About TGR</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free download</a>
+            <a class="nav-link" href="<?php echo base_url();?>/products" target="_blank">TGR Products</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
-          </li>
+         
         </ul>
 
         <!-- Right -->
