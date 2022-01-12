@@ -7,25 +7,34 @@
     <h4 class="h4 mb-3"><?=$title?></h4>
     <?php 
       echo "<pre>";
-     // print_r($user);
+      //print_r($user);
       echo "</pre>";
     ?>
-    <?php if($user): ?>
-      <?php foreach($user as $u): ?>
-        <h4 class="h3 mb-3"><?=$u->user_name?></h4>
-      <?php endforeach; ?>
-    <?php else: ?>
-      <p>No User has registered</p>
-    <?php endif; ?>
+    <?php //if($user): ?>
+      <?php //foreach($user as $u): ?>
+        <h4 class="h3 mb-3"><?=$u_email?></h4>
+      <?php //endforeach; ?>
+    <?php //else: ?>
+      <p>A simple way to manage your Inventory and  Sales </p>
+    <?php //endif; ?>
 
       <!--Grid row-->
       <div class="row">
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-
-          <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half" alt="">
-
+          <div class="card">
+            <div class="card-header">
+              <h4 class="h4 mb-4">Administer Ecommerce Shop</h4>
+            </div>   
+            <div class="card-body">
+              <p>Click on the new button to add a new category</p>
+              <p>
+                <a href="/category" class="btn btn-indigo">New Category</a>
+                <a href="/product" class="btn btn-green">New Product</a></p>
+              <p></p>
+            </div>   
+          </div>
         </div>
         <!--Grid column-->
 
@@ -34,26 +43,9 @@
 
           <!--Card-->
           <div class="card">
-            <?php if(isset($validation)):?>
-        <div class="alert alert-danger" role="alert">
-            <strong>Validation error</strong>
-            <?= $validation->listErrors(); ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if(isset($_SESSION['message_noti'])):?>
-            <div class="alert alert-success" role="alert">
-                <?= $_SESSION['message_noti'] ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if(isset($_SESSION['message_error'])):?>
-            <div class="alert alert-danger" role="alert">
-                <?= $_SESSION['message_error'] ?>
-            </div>
-        <?php endif; ?>
-        
-
+            <div class="card-header">
+              <h4 class="h4 mb-4">Available Categories and Products</h4>
+            </div>   
               <!--Card content-->
               <div class="card-body">
 

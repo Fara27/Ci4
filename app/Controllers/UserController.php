@@ -1,30 +1,40 @@
 <?php namespace App\Controllers;
 
-use App\Models\UserModel;
+use App\Models\Users;
 
-class User extends BaseController
+class UserController extends BaseController
 {
+		
 	public function index()
 	{
-		
-		$model = new UserModel();
+		$session = \Config\Services::session();
+		$model = new Users;
+		if(! $session){
+			return $this->response->redirect(base_url('/user/login'));
+			echo "User Session is not set";
+		} else {
+			
+	
         $data = [
-			'title' => 'Users Home Page',
-			'user' =>  $model->getUser()->getResult(),
-		];
-		//echo view('user_template', $data);
-		echo view('layouts/header', $data);
+			'title' => 'TRG Shop User',
+			'user' => $model->findAll() ,
+			'u_id' => $session->user_id,
+			'u_name' => $session->user_name,
+			'u_email' => $session->user_email,  
+		]; 
+		echo view('layouts/admin_header', $data);
 		echo view('user/home');
 		echo view('layouts/footer');
+		}
+		
 		
 	}
 
 	public function register()
 	{
 		helper('form');
-		$model = new UserModel();
-		
-        
+		$model = new Users();
+	
 		if(! $this->validate([
 			'u_name' => 'required',
 			'f_name' => 'required',
@@ -61,12 +71,10 @@ class User extends BaseController
 				'user_reg_date' => $cuTime ,
 				'updated_at' => $cuTime,
 			];
-			//echo "<pre>";
-			////print_r($data);
-			//echo "</pre>";
+			
 			
 				$model->save($data);
-				if($model->insert($data)){
+				if($model->save($data)){
 					echo "<h4>Data Inserted Successfully";
 				}else{
 					echo "<h4>Data was not inserted</h4>";
@@ -74,10 +82,7 @@ class User extends BaseController
 			} catch(\Exception $e){
 				die($e->getMessage());
 			}
-			
-
-			
-
+	
 			$data = [
 				'title' => 'Users Registration',
 				'page' => 'home'
@@ -86,14 +91,14 @@ class User extends BaseController
 			echo view('user/create');
 			echo view('layouts/footer');
 			//return redirect()->to('user');
-			//return $this->response->redirect(base_url('/user'));
+			return $this->response->redirect(base_url('/user'));
 		}
 		
 		
 	}
 
 	public function store() {
-        $userModel = new UserModel();
+        $userModel = new Users();
 
 		if(! $this->validate([
 			'u_name' => 'required',
@@ -112,8 +117,7 @@ class User extends BaseController
 			echo view('layouts/header', $data);
 			echo view('user/create');
 			echo view('layouts/footer');
-		} else {
-			
+		} else {	
 				$data = [
 					'user_name' => $this->request->getVar('u_name'),
 					'user_fname' => $this->request->getVar('f_name'),
@@ -124,19 +128,11 @@ class User extends BaseController
 					'user_pass' => $this->request->getVar('pword'),
 					'user_type' => $this->request->getVar('u_type'),
 				];
-				/* 
-				echo "<pre>";
-				print_r($this->request->getVar());
-				echo "</pre>";
-				echo "<pre>";
-				print_r($data);
-				echo "</pre>"; 
-				*/
-
-				//var_dump($userModel->insert($data)) ;
+		
 				if ($userModel->insert($data)){
 					echo 'Successful';
-					return redirect()->to('/login');
+					//return redirect()->to('/login');
+					return $this->response->redirect(site_url('/user/view'));
 				} else {
 					echo ' Failure to Insert';
 				}
@@ -146,11 +142,11 @@ class User extends BaseController
 
     public function view($email = null)
     {
-        $model = new UserModel();
+        $model = new Users();
 		$data = [
 			'title' => 'Users View',
 			'page' => 'home',
-			'user' => $model->getUser($email),
+			'user' => $model->findAll() ,
 		];
         
         	//echo view('user_template', $data);
@@ -161,21 +157,90 @@ class User extends BaseController
 
 	public function login()
     {
-        $model = new UserModel();
+       $model = new Users();
+	  
+		$data = [
+			'title' => 'User Sign In',
+			'page' => 'login',		
+		];
+
+        if(! $this->validate([
+			'user' => 'required',
+			'password' => 'required',
+		])){
+
+			echo view('layouts/header', $data);
+			echo view('user/login');
+			echo view('layouts/footer');
+		} else {	
+			
+			$session = session();
+			$email = $this->request->getVar('user');
+        	$password = $this->request->getVar('password');
+        
+        	$data = $model->where('user_email', $email)->first();
+			echo "<pre>";
+			print_r($data);
+			echo "</pre>";
+			
+				if($data){
+					$pass = $data->user_pass;
+					$authenticatePassword = FALSE;
+					if($pass == $password){
+						$authenticatePassword == TRUE ;
+						echo 'User Authenticated';
+						$ses_data = [
+							'user_id' => $data->user_id,
+							'user_name' => $data->user_name,
+							'user_email' => $data->user_email,
+							'user_type' => $data->user_type,
+							'isLoggedIn' => TRUE
+						];
+						$session->set($ses_data);
+						echo "<pre>";
+						print_r($ses_data);
+						echo "</pre>";
+						return $this->response->redirect(base_url('/user'));
+						//return redirect()->to('/user');
+					} else{
+						$session->setFlashdata('msg', 'Password is incorrect.');
+						echo 'Password is incorrect';
+						//return redirect()->to('/signin');
+					}
+
+				}else{
+					$data = [
+						'title' => 'User Sign In',
+						'page' => 'login',
+							
+					];
+					$session->setFlashdata('msg', 'Email does not exist.');
+					
+					echo view('layouts/header', $data);
+					echo view('user/login');
+					echo view('layouts/footer');
+				}
+			}
+				 
+			
+    }
+
+	public function confirm()
+	{
+		$model = new Users();
 		$data = [
 			'title' => 'User Sign In',
 			'page' => 'login',
-			'user' => $model->getUser(),
+			'user' => $model->findAll(),
 		];
-        
-        	//echo view('user_template', $data);
-		echo view('layouts/header', $data);
+		
+		echo "Confirm user";
 		echo view('user/login');
 		echo view('layouts/footer');
-    }
+	}
 
 	public function update(){
-        $userModel = new UserModel();
+        $userModel = new Users();
         $id = $this->request->getVar('user_id');
         $data = [
             'uname' => $this->request->getVar('u_name'),
@@ -192,11 +257,16 @@ class User extends BaseController
  
     // delete user
     public function delete($id = null){
-        $userModel = new UserModel();
+        $userModel = new Users();
         $data['user'] = $userModel->where('id', $id)->delete($id);
         return $this->response->redirect(site_url('/users/view'));
     }    
 
-
+	public function logout()
+	{
+		$session = session();
+		$session->destroy();
+		return $this->response->redirect(base_url('user/login'));
+	}
 
 }

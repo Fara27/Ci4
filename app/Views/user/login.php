@@ -5,16 +5,22 @@
           <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8">
                 <br>
-              <form class="bg-white rounded shadow-5-strong p-5">
+                
+              <form class="bg-white rounded shadow-5-strong p-5" method="post" action="<?=base_url()?>/user/login">
+              <?php if(session()->getFlashdata('msg')):?>
+                    <div class="alert alert-warning">
+                       <?= session()->getFlashdata('msg') ?>
+                    </div>
+                <?php endif;?>
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form1Example1" class="form-control" />
+                  <input type="email" name="user" id="form1Example1" class="form-control" />
                   <label class="form-label" for="form1Example1">Email address</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form1Example2" class="form-control" />
+                  <input type="password" name="password" id="form1Example2" class="form-control" />
                   <label class="form-label" for="form1Example2">Password</label>
                 </div>
 
@@ -23,7 +29,7 @@
                   <div class="col d-flex justify-content-center">
                     <!-- Checkbox -->
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                      <input name="remember" class="form-check-input" type="checkbox" value="true" id="form1Example3" checked />
                       <label class="form-check-label" for="form1Example3">
                         Remember me
                       </label>

@@ -21,10 +21,15 @@ class UserModel extends Model
     protected $createdField  = 'user_reg_date';
     protected $updatedField  = 'updated_at';
 
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function getUser()
     {
-        $builder = $this->db->table('users');
-        return $builder->get();
+        //$builder = $this->db->table('users');
+        //return $builder->get();
+        
     }
 
     public function setUser($data)

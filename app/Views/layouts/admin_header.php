@@ -99,9 +99,14 @@
             <a class="nav-link" href="<?php echo base_url();?>/about">About TGR</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>/product">TGR Products</a>
+            <a class="nav-link" href="<?php echo base_url();?>/product">Products</a>
           </li>
-         
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url();?>/category">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url();?>/subcategory">Sub-Categories</a>
+          </li>
         </ul>
 
         <!-- Right -->
@@ -117,9 +122,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
-              target="_blank">
-              <i class="fab fa-github mr-2"></i>TGR GitHub
+            <a href="<?php echo base_url();?>/logout" class="nav-link border border-light rounded">
+              <i class="fab fa-github mr-2"></i>Logout
             </a>
           </li>
         </ul>

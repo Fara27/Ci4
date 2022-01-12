@@ -33,12 +33,34 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->match(['get','post'], 'user/register', 'User::register');
-$routes->get('user/view', 'User::view');
-$routes->get('login', 'User::login');
-$routes->get('user/', 'User::index');
-$routes->get('/', 'Pages::index');
-$routes->get('(:any)', 'Pages::view/$1');
+//Product Routes
+$routes->get('product', 'ProductController::index');
+
+//SubCategory Routes
+$routes->get('subcategory', 'SubCategoryController::index');
+$routes->match(['get','post'],'subcategory/delete/(:any)', 'SubCategoryController::delete/$1');
+$routes->match(['get','post'],'subcategory/update/(:any)', 'SubCategoryController::update/$1');
+$routes->get('subcategory/edit/(:any)', 'SubCategoryController::edit/$1');
+
+
+//Category Routes
+$routes->get('category', 'CategoryController::index');
+$routes->match(['get','post'],'category/delete/(:any)', 'CategoryController::delete/$1');
+$routes->match(['get','post'],'category/update/(:any)', 'CategoryController::update/$1');
+$routes->get('category/edit/(:any)', 'CategoryController::edit/$1');
+
+//User Routes
+$routes->match(['get','post'], 'user/register', 'UserController::register');
+$routes->get('/logout', 'UserController::logout');
+$routes->get('user/view', 'UserController::view');
+$routes->get('user/login', 'UserController::login');
+$routes->get('user', 'UserController::index');
+$routes->get('/', 'PagesController::index');
+$routes->get('(:any)', 'PagesController::view/$1');
+
+
+
+
 
 //$routes->get('(:any)', 'User/Users::view/$1');
 /*
